@@ -1,0 +1,153 @@
+* {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  text-decoration: none;
+  box-sizing: border-box; }
+
+header,
+footer {
+  background: #56CCF2; }
+
+nav {
+  display: flex;
+  justify-content: flex-end;
+  z-index: -10; }
+  nav ul {
+    display: flex;
+    justify-content: space-around;
+    width: 20%;
+    height: 10vh;
+    position: relative;
+    align-items: center; }
+    nav ul li {
+      padding: 0 .3rem 0;
+      width: 70px;
+      text-align: center; }
+      nav ul li a {
+        color: white; }
+  nav ul:nth-child(2) {
+    display: flex;
+    flex-direction: column;
+    height: inherit;
+    position: absolute;
+    top: 10vh; }
+    nav ul:nth-child(2) .product {
+      display: none; }
+      nav ul:nth-child(2) .product:hover {
+        opacity: .8;
+        background: white; }
+      nav ul:nth-child(2) .product:hover a {
+        color: #56CCF2; }
+    nav ul:nth-child(2) .product-active {
+      display: block;
+      text-align: center;
+      width: 70px;
+      padding: 1rem 1rem;
+      background: #56CCF2;
+      transition: all .3s ease-in; }
+
+nav .nike-ul {
+  margin-right: 1rem; }
+
+.hamburger-menu {
+  height: 3px;
+  width: 20px;
+  background-color: white;
+  position: relative;
+  top: -5px; }
+  .hamburger-menu::before {
+    content: '';
+    width: 20px;
+    height: 3px;
+    background-color: white;
+    position: absolute;
+    top: 10px; }
+  .hamburger-menu__item {
+    display: none; }
+
+main {
+  display: flex;
+  justify-content: center;
+  background-color: #5ba5ce; }
+  main img {
+    width: 74%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin: 0 auto; }
+
+.nike-main {
+  height: 80.5vh;
+  background: white;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: space-around; }
+  .nike-main .cart-container {
+    border: 1px solid #56CCF2;
+    border-top-right-radius: 15px;
+    border-bottom-left-radius: 15px;
+    padding-left: 1rem;
+    flex: 0 1 18vw; }
+    .nike-main .cart-container img {
+      padding-top: 1rem;
+      width: 100%;
+      display: flex;
+      flex-direction: column; }
+    .nike-main .cart-container h3,
+    .nike-main .cart-container p,
+    .nike-main .cart-container button {
+      margin: .5rem 0; }
+    .nike-main .cart-container button {
+      border: none;
+      outline: none;
+      padding: .6rem;
+      border-radius: 1rem;
+      background: #56CCF2;
+      color: white; }
+      .nike-main .cart-container button:hover {
+        cursor: pointer; }
+
+section.shopping-cart-container {
+  width: 60vw;
+  margin: 0 auto;
+  margin-bottom: 1rem;
+  text-align: center; }
+  section.shopping-cart-container h1 {
+    display: inline-block;
+    width: 40vw;
+    text-align: center;
+    text-transform: uppercase;
+    border-bottom: 1px dotted black;
+    padding-bottom: .5rem; }
+  section.shopping-cart-container .cart-row {
+    margin-top: 1rem;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center; }
+    section.shopping-cart-container .cart-row span {
+      text-transform: uppercase;
+      padding-bottom: .5rem; }
+    section.shopping-cart-container .cart-row img {
+      width: 100px; }
+    section.shopping-cart-container .cart-row i {
+      color: red;
+      font-size: 2rem; }
+
+footer {
+  padding: 1rem;
+  width: 100vw; }
+  footer .social-icons-container {
+    width: 20%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-around; }
+    footer .social-icons-container img {
+      width: 30px; }
+      footer .social-icons-container img:hover {
+        cursor: pointer;
+        transform: rotateX(360deg);
+        transition: transform 1s ease; }
+
+/*# sourceMappingURL=style.css.map */
