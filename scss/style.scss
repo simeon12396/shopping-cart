@@ -182,6 +182,24 @@ section.shopping-cart-container {
       font-size: 2rem;
     }
   }
+  .price,
+  .purchase {
+    margin-top: 1rem;
+  }
+
+  .purchase {
+    border: none;
+    border-radius: 20px;
+    outline: none;
+    padding: 1rem 1.5rem;
+    transition: all .4s ease;
+
+    &:hover {
+      cursor: pointer;
+      background-color: #56CCF2;
+      color: white;
+    }
+  }
 }
 
 footer {

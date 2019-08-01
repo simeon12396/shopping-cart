@@ -39,8 +39,8 @@ function addProductsToCart(event) {
   cartRow.innerHTML = cartRowContents;
   cartTable.append(cartRow);
 
+  calculateTotalPrice('add', productPrice);
   removeProduct(productPrice);
-  calculatTotalPrice(productPrice);
 }
 
 /* remove product/products from cart*/
@@ -53,32 +53,54 @@ function removeProduct(productPrice) {
   });
 
   function removeProductFromTheCart(event) {
-    const convertedProductPrice = productPrice.replace(' $', '');
+    event.stopImmediatePropagation();
     const productForRemoving = event.target.parentElement.remove();
 
-    let getTotalPrice = document.querySelector('.price').innerText.split(' ')[1];
-
-    const updatedTotalPrice = getTotalPrice - parseFloat(convertedProductPrice);
-
-    console.log(productPrice);
-    return document.querySelector('.price').innerText = `Total: ${updatedTotalPrice} $`;
+    calculateTotalPrice('remove', productPrice);
   };
 };
 
 /* calculate total price */
 let sumOfPrices = 0;
 
-function calculatTotalPrice(productPrice){
-  let convertProductPrice = parseFloat(productPrice.replace(' $', ''));
-  
-  sumOfPrices += convertProductPrice;
+function calculateTotalPrice(action, productPrice){
+  let totalPrice;
 
-  const totalPrice = document.querySelector('.price');
+  if(action === 'add') {
+    totalPrice = document.querySelector('.price');
+    let convertProductPrice = parseFloat(productPrice.replace(' $', ''));
+    sumOfPrices += convertProductPrice;
+  };
+  
+  if(action === 'remove') {
+    totalPrice = document.querySelector('.price');
+    let convertProductPrice = parseFloat(productPrice.replace(' $', ''));
+    sumOfPrices = sumOfPrices - convertProductPrice;
+  };
+
+  if(action === 'purchase'){
+    totalPrice = document.querySelector('.price');
+    sumOfPrices = 0;
+  };
 
   totalPrice.innerText = `Total: ${sumOfPrices} $`;
 
   return sumOfPrices;
-}
+};
+
+const purchaseButton = document.querySelector('.purchase');
+
+purchaseButton.addEventListener('click', clearProductsInCart);
+
+function clearProductsInCart(event) {
+  const cartTable = Array.from(event.target.parentElement.children[1].children);
+
+  for(let key in cartTable) {
+    cartTable[key].remove();
+  };
+
+  calculateTotalPrice('purchase', 0);
+};
 
 
 

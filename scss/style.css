@@ -134,6 +134,19 @@ section.shopping-cart-container {
     section.shopping-cart-container .cart-row i {
       color: red;
       font-size: 2rem; }
+  section.shopping-cart-container .price,
+  section.shopping-cart-container .purchase {
+    margin-top: 1rem; }
+  section.shopping-cart-container .purchase {
+    border: none;
+    border-radius: 20px;
+    outline: none;
+    padding: 1rem 1.5rem;
+    transition: all .4s ease; }
+    section.shopping-cart-container .purchase:hover {
+      cursor: pointer;
+      background-color: #56CCF2;
+      color: white; }
 
 footer {
   padding: 1rem;
