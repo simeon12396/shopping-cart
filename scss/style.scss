@@ -1,3 +1,5 @@
+@import 'devices.scss';
+
 * {
   margin: 0;
   padding: 0;
@@ -12,6 +14,8 @@ nav {
   display: flex;
   justify-content: flex-end;
   z-index: -10;
+
+  
   ul {
     display: flex;
     justify-content: space-around;
@@ -19,14 +23,72 @@ nav {
     height: 10vh;
     position: relative;
     align-items: center;
+
+    @media screen and (min-width: $bp-medium-devices) and (max-width: $bp-large-devices) {
+      width: 50%;
+    }
+
+    @media screen and (min-width: $bp-large-devices) and (max-width: $bp-extra-large-devices) {
+      width: 40%;
+    }
+
+    @media screen and (min-width: $bp-small-devices) and (max-width: $bp-medium-devices) {
+      width: 40%;
+    }
+
+    @media screen and (max-width: $bp-small-devices) {
+      width: 100%;
+      flex-direction: column;
+      height: auto;
+    }
     
     li {
       padding: 0 .3rem 0;;
       width: 70px;
       text-align: center;
+      color: white;
+      
+      @media screen and (max-width: $bp-small-devices) {
+        padding: .5rem;
+        width: 100%;
+      }
 
       a {
         color: white;
+      }
+    }
+
+    li.sub-menu {
+      @media screen and (max-width: $bp-small-devices) {
+        padding: 0;
+        width: 100%;
+        order: 4;
+      }
+
+      ul {
+        @media screen and (min-width: $bp-medium-devices) and (max-width: $bp-large-devices) {
+          left: -6%;
+        }
+
+        @media screen and (min-width: $bp-large-devices) and (max-width: $bp-extra-large-devices) {
+          left: 0;
+        }
+
+        @media screen and (min-width: $bp-small-devices) and (max-width: $bp-medium-devices) {
+          left: 0;
+        }
+
+        @media screen and (max-width: $bp-small-devices) {
+          width: 100vw;
+          margin-top: .3rem;
+        }
+
+        li.product-active {
+          @media screen and (max-width: $bp-small-devices) {
+            width: 100%;
+            padding: .5rem;
+          }
+        }
       }
     }
   }
@@ -62,45 +124,56 @@ nav {
   }
 }
 
-nav {
-
-  .nike-ul {
-    margin-right: 1rem;
-  }
-}
-
-.hamburger-menu {
-  height: 3px;
-  width: 20px;
-  background-color: white;
-  position: relative;
-  top: -5px;
-
-  &::before {
-    content: '';
-    width: 20px;
-    height: 3px;
-    background-color: white;
-    position: absolute;
-    top: 10px;
-  }
-
-  &__item {
-    display: none;
-  }
-}
-
 main {
   display: flex;
   justify-content: center;
   background-color: rgb(91, 165, 206);
   
+  @media screen and (min-width: $bp-large-devices) and (max-width: $bp-extra-large-devices) {
+    height: 83vh;
+  }
+
+  @media screen and (min-width: $bp-medium-devices) and (max-width: $bp-large-devices) {
+    height: 83vh;
+  }
+
+  @media screen and (min-width: $bp-small-devices) and (max-width: $bp-medium-devices) {
+    height: 83vh;
+  }
+
+  @media screen and (max-width: $bp-small-devices) {
+    height: 83vh;
+  }
+
   img {
-    width: 74%;
+    width: 100%;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     margin: 0 auto;
+  }
+}
+
+.nike-ul {
+  
+  li.sub-menu {
+    ul {
+      @media screen and (min-width: $bp-medium-devices) and (max-width: $bp-large-devices) {
+        left: 13%;
+      }
+
+      @media screen and (min-width: $bp-large-devices) and (max-width: $bp-extra-large-devices) {
+        left: 18%;
+      }
+
+      @media screen and (min-width: $bp-small-devices) and (max-width: $bp-medium-devices) {
+        left: 18%;
+      }
+
+      @media screen and (max-width: $bp-small-devices) {
+        margin-top: 2.3rem;
+      }
+    }
   }
 }
 
@@ -112,13 +185,53 @@ main {
   flex-wrap: wrap;
   justify-content: space-around;
 
+  @media screen and (min-width: $bp-extra-large-devices) {
+    margin-bottom: .5rem;
+  }
+
+  @media screen and (min-width: $bp-large-devices) and (max-width: $bp-extra-large-devices) {
+    margin-top: .5rem;
+    height: auto;
+  }
+
+  @media screen and (min-width: $bp-medium-devices) and (max-width: $bp-large-devices) {
+    margin-top: .5rem;
+    height: auto;
+  }
+
+  @media screen and (min-width: $bp-small-devices) and (max-width: $bp-medium-devices) {
+    margin-top: .5rem;
+    height: auto;
+  }
+
+  @media screen and (max-width: $bp-small-devices) {
+    height: auto;
+  }
+
   .cart-container {
     border: 1px solid #56CCF2;
     border-top-right-radius: 15px;
     border-bottom-left-radius: 15px;
     padding-left: 1rem;
-    flex: 0 1 18vw;
+    flex: 0 1 300px;
 
+    @media screen and (min-width: $bp-medium-devices) and (max-width: $bp-large-devices) {
+      margin: 1rem 0;
+    }
+
+    @media screen and (min-width: $bp-small-devices) and (max-width: $bp-medium-devices) {
+      margin: 1rem 0;
+    }
+  
+    @media screen and (max-width: $bp-small-devices) {
+      margin: 1rem 0;
+    }
+
+    &:last-of-type {
+      @media screen and (min-width: $bp-large-devices) and (max-width: $bp-extra-large-devices) {
+        margin-bottom: .5rem;
+      }
+    }
     img {
       padding-top: 1rem;
       width: 100%;
@@ -153,6 +266,10 @@ section.shopping-cart-container {
   margin-bottom: 1rem;
   text-align: center;
 
+  @media screen and(min-width: $bp-medium-devices) and (max-width: $bp-large-devices) {
+    margin-top: .5rem;
+  }
+
   h1 {
     display: inline-block;
     width: 40vw;
@@ -168,9 +285,27 @@ section.shopping-cart-container {
     justify-content: space-evenly;
     align-items: center;
 
+    @media screen and (max-width: $bp-small-devices) {
+      flex-direction: column;
+    }
+
+    & > * {
+      @media screen and (max-width: $bp-small-devices) {
+        margin-bottom: .2rem;
+      }
+    }
+
     span {
       text-transform: uppercase;
       padding-bottom: .5rem;
+
+      @media screen and (min-width: $bp-medium-devices) and (max-width: $bp-large-devices) {
+        width: 10vw;
+      }
+
+      @media screen and (max-width: $bp-small-devices) {
+        width: 10vw;
+      }
     }
 
     img {
@@ -180,8 +315,21 @@ section.shopping-cart-container {
     i {
       color: red;
       font-size: 2rem;
+
+      @media screen and (min-width: $bp-medium-devices) and (max-width: $bp-large-devices) {
+        margin-left: .5rem;
+      }
+
+      @media screen and (min-width: $bp-small-devices) and (max-width: $bp-medium-devices) {
+        margin-left: .5rem;
+      }
+
+      @media screen and (max-width: $bp-small-devices) {
+        margin-left: .5rem;
+      }
     }
   }
+
   .price,
   .purchase {
     margin-top: 1rem;
@@ -211,6 +359,10 @@ footer {
     margin: 0 auto;
     display: flex;
     justify-content: space-around;
+
+    @media screen and (max-width: $bp-large-devices) {
+      width: 50vw;
+    }
 
     img {
       width: 30px;

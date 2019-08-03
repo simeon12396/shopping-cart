@@ -20,12 +20,53 @@ nav {
     height: 10vh;
     position: relative;
     align-items: center; }
+    @media screen and (min-width: 768px) and (max-width: 992px) {
+      nav ul {
+        width: 50%; } }
+    @media screen and (min-width: 992px) and (max-width: 1200px) {
+      nav ul {
+        width: 40%; } }
+    @media screen and (min-width: 576px) and (max-width: 768px) {
+      nav ul {
+        width: 40%; } }
+    @media screen and (max-width: 576px) {
+      nav ul {
+        width: 100%;
+        flex-direction: column;
+        height: auto; } }
     nav ul li {
       padding: 0 .3rem 0;
       width: 70px;
-      text-align: center; }
+      text-align: center;
+      color: white; }
+      @media screen and (max-width: 576px) {
+        nav ul li {
+          padding: .5rem;
+          width: 100%; } }
       nav ul li a {
         color: white; }
+    @media screen and (max-width: 576px) {
+      nav ul li.sub-menu {
+        padding: 0;
+        width: 100%;
+        order: 4; } }
+    @media screen and (min-width: 768px) and (max-width: 992px) {
+      nav ul li.sub-menu ul {
+        left: -6%; } }
+    @media screen and (min-width: 992px) and (max-width: 1200px) {
+      nav ul li.sub-menu ul {
+        left: 0; } }
+    @media screen and (min-width: 576px) and (max-width: 768px) {
+      nav ul li.sub-menu ul {
+        left: 0; } }
+    @media screen and (max-width: 576px) {
+      nav ul li.sub-menu ul {
+        width: 100vw;
+        margin-top: .3rem; } }
+    @media screen and (max-width: 576px) {
+      nav ul li.sub-menu ul li.product-active {
+        width: 100%;
+        padding: .5rem; } }
   nav ul:nth-child(2) {
     display: flex;
     flex-direction: column;
@@ -47,35 +88,41 @@ nav {
       background: #56CCF2;
       transition: all .3s ease-in; }
 
-nav .nike-ul {
-  margin-right: 1rem; }
-
-.hamburger-menu {
-  height: 3px;
-  width: 20px;
-  background-color: white;
-  position: relative;
-  top: -5px; }
-  .hamburger-menu::before {
-    content: '';
-    width: 20px;
-    height: 3px;
-    background-color: white;
-    position: absolute;
-    top: 10px; }
-  .hamburger-menu__item {
-    display: none; }
-
 main {
   display: flex;
   justify-content: center;
   background-color: #5ba5ce; }
+  @media screen and (min-width: 992px) and (max-width: 1200px) {
+    main {
+      height: 83vh; } }
+  @media screen and (min-width: 768px) and (max-width: 992px) {
+    main {
+      height: 83vh; } }
+  @media screen and (min-width: 576px) and (max-width: 768px) {
+    main {
+      height: 83vh; } }
+  @media screen and (max-width: 576px) {
+    main {
+      height: 83vh; } }
   main img {
-    width: 74%;
+    width: 100%;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     margin: 0 auto; }
+
+@media screen and (min-width: 768px) and (max-width: 992px) {
+  .nike-ul li.sub-menu ul {
+    left: 13%; } }
+@media screen and (min-width: 992px) and (max-width: 1200px) {
+  .nike-ul li.sub-menu ul {
+    left: 18%; } }
+@media screen and (min-width: 576px) and (max-width: 768px) {
+  .nike-ul li.sub-menu ul {
+    left: 18%; } }
+@media screen and (max-width: 576px) {
+  .nike-ul li.sub-menu ul {
+    margin-top: 2.3rem; } }
 
 .nike-main {
   height: 80.5vh;
@@ -84,12 +131,42 @@ main {
   align-items: center;
   flex-wrap: wrap;
   justify-content: space-around; }
+  @media screen and (min-width: 1200px) {
+    .nike-main {
+      margin-bottom: .5rem; } }
+  @media screen and (min-width: 992px) and (max-width: 1200px) {
+    .nike-main {
+      margin-top: .5rem;
+      height: auto; } }
+  @media screen and (min-width: 768px) and (max-width: 992px) {
+    .nike-main {
+      margin-top: .5rem;
+      height: auto; } }
+  @media screen and (min-width: 576px) and (max-width: 768px) {
+    .nike-main {
+      margin-top: .5rem;
+      height: auto; } }
+  @media screen and (max-width: 576px) {
+    .nike-main {
+      height: auto; } }
   .nike-main .cart-container {
     border: 1px solid #56CCF2;
     border-top-right-radius: 15px;
     border-bottom-left-radius: 15px;
     padding-left: 1rem;
-    flex: 0 1 18vw; }
+    flex: 0 1 300px; }
+    @media screen and (min-width: 768px) and (max-width: 992px) {
+      .nike-main .cart-container {
+        margin: 1rem 0; } }
+    @media screen and (min-width: 576px) and (max-width: 768px) {
+      .nike-main .cart-container {
+        margin: 1rem 0; } }
+    @media screen and (max-width: 576px) {
+      .nike-main .cart-container {
+        margin: 1rem 0; } }
+    @media screen and (min-width: 992px) and (max-width: 1200px) {
+      .nike-main .cart-container:last-of-type {
+        margin-bottom: .5rem; } }
     .nike-main .cart-container img {
       padding-top: 1rem;
       width: 100%;
@@ -114,6 +191,9 @@ section.shopping-cart-container {
   margin: 0 auto;
   margin-bottom: 1rem;
   text-align: center; }
+  @media screen and (min-width: 768px) and (max-width: 992px) {
+    section.shopping-cart-container {
+      margin-top: .5rem; } }
   section.shopping-cart-container h1 {
     display: inline-block;
     width: 40vw;
@@ -126,14 +206,35 @@ section.shopping-cart-container {
     display: flex;
     justify-content: space-evenly;
     align-items: center; }
+    @media screen and (max-width: 576px) {
+      section.shopping-cart-container .cart-row {
+        flex-direction: column; } }
+    @media screen and (max-width: 576px) {
+      section.shopping-cart-container .cart-row > * {
+        margin-bottom: .2rem; } }
     section.shopping-cart-container .cart-row span {
       text-transform: uppercase;
       padding-bottom: .5rem; }
+      @media screen and (min-width: 768px) and (max-width: 992px) {
+        section.shopping-cart-container .cart-row span {
+          width: 10vw; } }
+      @media screen and (max-width: 576px) {
+        section.shopping-cart-container .cart-row span {
+          width: 10vw; } }
     section.shopping-cart-container .cart-row img {
       width: 100px; }
     section.shopping-cart-container .cart-row i {
       color: red;
       font-size: 2rem; }
+      @media screen and (min-width: 768px) and (max-width: 992px) {
+        section.shopping-cart-container .cart-row i {
+          margin-left: .5rem; } }
+      @media screen and (min-width: 576px) and (max-width: 768px) {
+        section.shopping-cart-container .cart-row i {
+          margin-left: .5rem; } }
+      @media screen and (max-width: 576px) {
+        section.shopping-cart-container .cart-row i {
+          margin-left: .5rem; } }
   section.shopping-cart-container .price,
   section.shopping-cart-container .purchase {
     margin-top: 1rem; }
@@ -156,6 +257,9 @@ footer {
     margin: 0 auto;
     display: flex;
     justify-content: space-around; }
+    @media screen and (max-width: 992px) {
+      footer .social-icons-container {
+        width: 50vw; } }
     footer .social-icons-container img {
       width: 30px; }
       footer .social-icons-container img:hover {
