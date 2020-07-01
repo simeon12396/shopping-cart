@@ -72,7 +72,7 @@ nav {
     flex-direction: column;
     height: inherit;
     position: absolute;
-    top: 10vh; }
+    top: 1.5vh; }
     nav ul:nth-child(2) .product {
       display: none; }
       nav ul:nth-child(2) .product:hover {
