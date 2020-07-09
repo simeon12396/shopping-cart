@@ -1,15 +1,15 @@
 /*shoes dropdown menu*/
-const subMenu = document.querySelector('.sub-menu');
+// const subMenu = document.querySelector('.sub-menu');
 
-subMenu.addEventListener('click', showSubMenu);
+// subMenu.addEventListener('click', showSubMenu);
 
-function showSubMenu() {
-  const subMenuProducts = document.querySelectorAll('.product');
+// function showSubMenu() {
+//   const subMenuProducts = document.querySelectorAll('.product');
 
-  subMenuProducts.forEach((product) => {
-    product.classList.toggle('product-active');
-  });
-}
+//   subMenuProducts.forEach((product) => {
+//     product.classList.toggle('product-active');
+//   });
+// }
 
 /*add product/products to cart*/
 
